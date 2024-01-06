@@ -1,6 +1,43 @@
-import React from "react";
+import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import {
+  faCircleChevronLeft,
+  faCircleChevronRight,
+  faCircleXmark
+} from "@fortawesome/free-solid-svg-icons"
 
 const PhotoGallery = () => {
+
+  const galleryImages =[
+    {img :"https://cdn.weddingwishlist.com/images/website/gallery/gallery_1.png"},
+    {img :"https://cdn.weddingwishlist.com/images/website/gallery/gallery_2.png"},
+    {img :"https://cdn.weddingwishlist.com/images/website/gallery/gallery_3.png"},
+    {img :"https://cdn.weddingwishlist.com/images/website/gallery/gallery_4.png"},
+    {img :"https://cdn.weddingwishlist.com/images/website/gallery/gallery_5.png"}
+  ]
+
+  const [slideNumber, setSlideNumber] = useState(0)
+  const [openModel, setOpenModel] = useState(false)
+
+  const handleOpenModel=(index)=>{
+    setSlideNumber(index)
+    setOpenModel(true)
+  }
+
+  const handleCloseModel =()=>{
+
+    setOpenModel(false)
+  }
+
+  const handlePrev =()=>{
+    slideNumber === 0 ? setSlideNumber( galleryImages.length -1) : setSlideNumber(slideNumber -1)
+    
+  }
+
+  const handleNext =()=>{
+
+    slideNumber === (galleryImages.length -1) ? setSlideNumber( 0) : setSlideNumber(slideNumber +1)
+  }
   return (
     <div>
       <div className="content-section" id="photo_gallery">
@@ -12,114 +49,47 @@ const PhotoGallery = () => {
               celebrations and special moments from the journey. We hope you
               enjoy it!
             </div>
-            <div
-              className="grid"
-              style={{ position: "relative", height: "414px" }}
-            >
-              <div
-                className="item img-block"
-                style={{ position: "absolute", top: "0px", left: "0px" }}
-              >
-                {" "}
-                <img
-                  className="gallery-image gallery-img"
-                  alt="Gallery Image 0"
-                  src="https://cdn.weddingwishlist.com/images/website/gallery/gallery_1.png"
-                />{" "}
+
+          <div>   
+            {
+              openModel && 
+              <div className="slideWrap">
+                <FontAwesomeIcon icon={faCircleXmark} className="btnClose" onClick={handleCloseModel} />
+                <FontAwesomeIcon icon={faCircleChevronLeft} className="btnPrev" onClick={handlePrev}/>
+                <FontAwesomeIcon icon={faCircleChevronRight} className="btnNext" onClick={handleNext} />
+                <div className="fullScreenImage">
+                  <img src={galleryImages[slideNumber].img} alt="" />
+                </div>
               </div>
-              <div
-                className="item img-block"
-                style={{ position: "absolute", top: "0px", left: "190px" }}
-              >
-                {" "}
-                <img
-                  className="gallery-image gallery-img"
-                  alt="Gallery Image 1"
-                  src="https://cdn.weddingwishlist.com/images/website/gallery/gallery_2.png"
-                />{" "}
+            }
+
+              <div className="galleryWrap">
+              {
+                  galleryImages && galleryImages.map((slide ,index)=>{
+                    return(
+
+                      <div 
+                        className="single" 
+                        key={index}
+                        onClick={()=> handleOpenModel(index)}
+                      >
+                        <img src={slide.img} alt="" />
+                      </div>
+                    )
+
+                  })
+
+              }
+
               </div>
-              <div
-                className="item img-block"
-                style={{ position: "absolute", top: "130px", left: "0px" }}
-              >
-                {" "}
-                <img
-                  className="gallery-image gallery-img"
-                  alt="Gallery Image 2"
-                  src="https://cdn.weddingwishlist.com/images/website/gallery/gallery_3.png"
-                />{" "}
-              </div>
-              <div
-                className="item img-block"
-                style={{ position: "absolute", top: "260px", left: "0px" }}
-              >
-                {" "}
-                <img
-                  className="gallery-image gallery-img"
-                  alt="Gallery Image 3"
-                  src="https://cdn.weddingwishlist.com/images/website/gallery/gallery_4.png"
-                />{" "}
-              </div>
-              <div
-                className="item img-block"
-                style={{ position: "absolute", top: "284px", left: "190px" }}
-              >
-                {" "}
-                <img
-                  className="gallery-image gallery-img"
-                  alt="Gallery Image 4"
-                  src="https://cdn.weddingwishlist.com/images/website/gallery/gallery_5.png"
-                />{" "}
-              </div>
-            </div>
+            
           </div>
-        </div>
-      </div>
-      <div
-        id="galleryModal"
-        className="modal fade"
-        role="dialog"
-        tabindex="-1"
-        aria-modal="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div
-              className="modal-header"
-              style={{ borderBottom: "none", padding: 0 }}
-            >
-              {" "}
-              <button
-                type="button"
-                className="btn btn-default close-but"
-                data-bs-dismiss="modal"
-              >
-                {" "}
-                <i className="fa fa-times-circle"></i>
-              </button>{" "}
-            </div>
-            <div className="modal-body" style={{ padding: "0px !important" }}>
-              {" "}
-              <img className="img-modal" src="" />{" "}
-            </div>
+
+
+
+
+
           </div>
-        </div>
-        <div>
-          {" "}
-          <span className="prev-pos" id="prev-but" aria-hidden="true">
-            {" "}
-            <i
-              onClick="loadElementToShow(-1)"
-              className="fa fa-chevron-circle-left"
-            ></i>{" "}
-          </span>{" "}
-          <span className="next-pos" id="next-but" aria-hidden="true">
-            {" "}
-            <i
-              onClick="loadElementToShow(1)"
-              className="fa fa-chevron-circle-right"
-            ></i>{" "}
-          </span>
         </div>
       </div>
     </div>

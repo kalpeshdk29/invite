@@ -35,31 +35,31 @@ const functions = () => {
                     </div>
                 </div>
             </div>
-            <div class="row events-container">
-                    <div class="col-sm-hidden col-md-7">
-                        <div class="image-container-1">
-                            <div id="event-2-img" class="event-img"><img
+            <div className="row events-container">
+                    <div className="col-sm-hidden col-md-7">
+                        <div className="image-container-1">
+                            <div id="event-2-img" className="event-img"><img
                                     src={myImage}
                                     alt="wedding-website-functions-thumbnail-2"/></div>
                         </div>
                     </div>
-                    <div class="col-sm-12 col-md-5 event-description-wrapper">
-                        <div class="event-description-container">
-                            <div class="event-description">
-                                <h3 id="event-2-name" class="event-name">Engagement</h3>
-                                <div class="image-container-2">
-                                    <div id="event-2-img" class="event-img"><img
+                    <div className="col-sm-12 col-md-5 event-description-wrapper">
+                        <div className="event-description-container">
+                            <div className="event-description">
+                                <h3 id="event-2-name" className="event-name">Engagement</h3>
+                                <div className="image-container-2">
+                                    <div id="event-2-img" className="event-img"><img
                                             src="https://i0.wp.com/sociallover.net/wp-content/uploads/2017/05/indian-engagement-wallpapers.png"
                                             alt="wedding-website-functions-thumbnail-2"/> </div>
                                 </div>
-                                <div id="event-2-day" class="event-date">February 04, 2024<br/>5:00 PM - 6:30 PM </div><br/>
+                                <div id="event-2-day" className="event-date">February 04, 2024<br/>5:00 PM - 6:30 PM </div><br/>
                                 <address> <span id="event-4-map" className="event-map"> Panchkrushna Lawns,<br />Konark Nagar, Nashik,  <div id="event-4-maplink" className="event-maplink"> <a target="_blank"
                                     type="button" id="map_2" title="View Map"
                                     style={{ textDecoration: "none !important", boxShadow: "none", }}
                                     href="https://maps.app.goo.gl/VLzvyM69HTDmuknt6"
                                     className="btn btn-link view-map action-link">&nbsp;View Map</a> </div>
                             </span> </address><br />
-                                <p id="event-2-text6" class="event-details" style={{ padding: "5px 0 !important", }}>Dress
+                                <p id="event-2-text6" className="event-details" style={{ padding: "5px 0 !important", }}>Dress
                                     Code: Bollywood-inspired</p>
                                 <div style={{ margin: "10px 0", paddingBottom: "30px", }}></div>
                             </div>
