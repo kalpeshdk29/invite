@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/static/css/main.57aa2855.css",
-    "main.js": "/static/js/main.861b8122.js",
-    "static/js/787.c14bc1fe.chunk.js": "/static/js/787.c14bc1fe.chunk.js",
-    "static/media/indian-engagement-wallpapers.png": "/static/media/indian-engagement-wallpapers.82a31fc6c92cc88c2ed8.png",
-    "index.html": "/index.html",
-    "main.57aa2855.css.map": "/static/css/main.57aa2855.css.map",
-    "main.861b8122.js.map": "/static/js/main.861b8122.js.map",
-    "787.c14bc1fe.chunk.js.map": "/static/js/787.c14bc1fe.chunk.js.map"
+    "main.css": "/invite/static/css/main.57aa2855.css",
+    "main.js": "/invite/static/js/main.c01f7ae1.js",
+    "static/js/787.c14bc1fe.chunk.js": "/invite/static/js/787.c14bc1fe.chunk.js",
+    "static/media/indian-engagement-wallpapers.png": "/invite/static/media/indian-engagement-wallpapers.82a31fc6c92cc88c2ed8.png",
+    "index.html": "/invite/index.html",
+    "main.57aa2855.css.map": "/invite/static/css/main.57aa2855.css.map",
+    "main.c01f7ae1.js.map": "/invite/static/js/main.c01f7ae1.js.map",
+    "787.c14bc1fe.chunk.js.map": "/invite/static/js/787.c14bc1fe.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.57aa2855.css",
-    "static/js/main.861b8122.js"
+    "static/js/main.c01f7ae1.js"
   ]
 }
